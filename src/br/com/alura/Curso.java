@@ -50,4 +50,12 @@ public class Curso {
     public boolean estaMatriculado(Aluno aluno) {
         return this.alunos.contains(aluno);
     }
+
+    public Aluno buscaMatriculado(int numero) {
+        for (Aluno aluno : alunos) {
+            if (aluno.getNumeroMatricula() == numero)
+                return aluno;
+        }
+        throw new NoSuchElementException("Matrícula " + numero +  " não encontrada.");
+    }
 }
